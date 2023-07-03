@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :stocks 
 
+  delete '/users', to: 'users#delete_user', as: :delete_user
+
+
 end
