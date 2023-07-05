@@ -9,14 +9,33 @@
     <%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   </head>
-
   <body>
     <%= render 'layouts/navigation' %> 
     <div class="container">
-      <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+      <% if notice.present? %>
+        <div class="card green">
+          <div class="card-content white-text">
+            <span class="card-title">Notice</span>
+            <p><%= notice %></p>
+          </div>
+        </div>
+      <% end %>
+      
+      <% if alert.present? %>
+        <div class="card red">
+          <div class="card-content white-text">
+            <span class="card-title">Alert</span>
+            <p><%= alert %></p>
+          </div>
+        </div>
+      <% end %>
+      
       <%= yield %>
-      </div>
+    </div>
+
+    <!-- Include the Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
