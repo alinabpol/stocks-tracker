@@ -50,6 +50,8 @@ gem "bootsnap", require: false
   gem 'materialize-sass'
   gem "sassc-rails"
 
+  gem 'iex-ruby-client'
+
 gem 'devise', '~> 4.9', '>= 4.9.2'
 
 group :development, :test do
