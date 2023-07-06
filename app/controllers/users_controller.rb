@@ -4,4 +4,8 @@ class UsersController < ApplicationController
       user.destroy
       redirect_to root_path, notice: 'User successfully deleted.'
     end
+
+    def my_portfolio
+
+    end
   end
