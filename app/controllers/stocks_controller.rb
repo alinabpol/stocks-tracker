@@ -1,7 +1,8 @@
-class WelcomeController < ApplicationController
+class StocksController < ApplicationController
 
-    def show
+    def search
+        stock = Stock.new_lookup(params[:stock])
+        render json: stock
     end
 
-    
 end
