@@ -21,31 +21,26 @@
     </div>
 </div>
 
-
+  <% if !@tracked_stocks.empty? %>
       <table>
         <thead>
           <tr>
+              <th>Ticker</th>
               <th>Name</th>
-              <th>Item Name</th>
-              <th>Item Price</th>
+              <th>Price</th>
+              <th>Actions</th>
           </tr>
         </thead>
 
         <tbody>
+        <% @tracked_stocks.each do |stock| %>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <th scope="row"><%= stock.ticker %></th>
+            <td><%= stock.name %></td>
+            <td><%= stock.last_price %></td>
+            <td><%= 'placeholder' %></td>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          <% end%>
         </tbody>
       </table>
+<%end %>
