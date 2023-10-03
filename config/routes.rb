@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, only: [:create]
+  devise_for :users, only: [:create, :destroy]
 
   root 'pages#home'
   resources :stocks 
